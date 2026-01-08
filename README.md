@@ -33,20 +33,19 @@ You are not in trouble provided the work is yours. If you are unable to explain 
 **It is not okay to allow another student to use your work.** If I suspect you have taken or shared work with another student, then I will reach out to all parties to make sure everyone can explain the work to me individually. If it becomes clear that a student has submitted work they do not understand or are unable to explain to me, then I reserve the right to penalize all parties involved (the giver and taker of ideas) according to the policy explained in the previous section.
 
 # Examples of Showing Work on Homework
-Suppose you are asked to find the mean hurricane force diameter of all storm observations in the data frame named storms in the dplyr package.
+Suppose you are asked to find the mean hurricane force diameter of all storm observations in the data frame named ``storms`` in the ``dplyr`` package.
 
-```{r}
+```
 library(dplyr)
 ```
-Solution without AI
+# Solution without AI
+```
 mean(storms$hurricane_force_diameter, na.rm = TRUE)
-
+```
 [1] 14.9207
-The mean hurricane force diameter is 
- nautical miles.
+The mean hurricane force diameter is $14.9207$ nautical miles.
 
-Note
-We have done examples in class very similar, so there is no need to explain any further. If you use AI to check your work and it gives the same result, you do not need to state that. You got the right answer on your own using techniques you’ve learned in this class. Well done!
+**_Note:_** We have done examples in class very similar, so there is no need to explain any further. If you use AI to check your work and it gives the same result, you do not need to state that. You got the right answer on your own using techniques you’ve learned in this class. Well done!
 
 Partial Solution without AI
 mean(storms$hurricane_force_diameter)
