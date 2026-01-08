@@ -35,9 +35,9 @@ You are not in trouble provided the work is yours. If you are unable to explain 
 # Examples of Showing Work on Homework
 Suppose you are asked to find the mean hurricane force diameter of all storm observations in the data frame named storms in the dplyr package.
 
-``
+```
 library(dplyr)
-``
+```
 Solution without AI
 mean(storms$hurricane_force_diameter, na.rm = TRUE)
 
