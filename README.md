@@ -69,6 +69,7 @@ The mean hurricane force diameter is **NA** nautical miles, but this does not ma
 summary(storms$hurricane_force_diameter)
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+
    0.00    0.00    0.00   14.92    0.00  300.00    9512 
 
 The mean hurricane force diameter is $14.92$ nautical miles.
