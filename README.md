@@ -43,18 +43,25 @@ library(dplyr)
 mean(storms$hurricane_force_diameter, na.rm = TRUE)
 ```
 [1] 14.9207
+
 The mean hurricane force diameter is $14.9207$ nautical miles.
 
+---
 **_Note:_** We have done examples in class very similar, so there is no need to explain any further. If you use AI to check your work and it gives the same result, you do not need to state that. You got the right answer on your own using techniques you’ve learned in this class. Well done!
 
-Partial Solution without AI
+---
+
+# Partial Solution without AI
+```
 mean(storms$hurricane_force_diameter)
-
+```
 [1] NA
-The mean hurricane force diameter is NA nautical miles, but this does not make sense. Not sure what I did wrong?
 
-Note
-You were close. You knew to use the mean() function so you will earn some partial credit. You tried this on your own and were not quite correct. I would leave a comment in your work about using the argument na.rm = TRUE when the vector contains missing values. Hopefully you can avoid making that mistake again. It’s great you tried to solve this on your own!
+The mean hurricane force diameter is **NA** nautical miles, but this does not make sense. Not sure what I did wrong?
+
+---
+**_Note:_** You were close. You knew to use the ``mean()`` function so you will earn some partial credit. You tried this on your own and were not quite correct. I would leave a comment in your work about using the argument na.rm = TRUE when the vector contains missing values. Hopefully you can avoid making that mistake again. It’s great you tried to solve this on your own!
+---
 
 Solution Using AI to Check and Improve
 summary(storms$hurricane_force_diameter)
