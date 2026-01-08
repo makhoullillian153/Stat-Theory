@@ -61,71 +61,90 @@ The mean hurricane force diameter is **NA** nautical miles, but this does not ma
 
 ---
 **_Note:_** You were close. You knew to use the ``mean()`` function so you will earn some partial credit. You tried this on your own and were not quite correct. I would leave a comment in your work about using the argument na.rm = TRUE when the vector contains missing values. Hopefully you can avoid making that mistake again. It’s great you tried to solve this on your own!
+
 ---
 
-Solution Using AI to Check and Improve
+# Solution Using AI to Check and Improve
+```
 summary(storms$hurricane_force_diameter)
-
+```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
    0.00    0.00    0.00   14.92    0.00  300.00    9512 
-The mean hurricane force diameter is 
- nautical miles.
+
+The mean hurricane force diameter is $14.92$ nautical miles.
 
 I was not certain if this is the best since the output includes other statistics that we are not asked to provide. I typed the prompt below into Gemini AI:
 
-What is the R formula for computing the mean of a numeric vector?
+> What is the R formula for computing the mean of a numeric vector?
 
-R provided the following suggestion: mean(df$var). I knew to change the data frame name from df to storms and the variable name from var to hurricane_force_diameter. Then I ran the code below:
+R provided the following suggestion: ``mean(df$var)``. I knew to change the data frame name from ``df`` to ``storms`` and the variable name from ``var`` to ``hurricane_force_diameter``. Then I ran the code below:
 
+```
 mean(storms$hurricane_force_diameter)
+```
 
 [1] NA
-The output NA does not make sense and is not the same as my previous answer. I gave Gemini AI the following prompt next:
 
-My data frame is named storms and the variable of interest is hurricane_force_diameter. The output of mean(storms$hurricane_force_diameter) is NA but that is not correct. Why do you think I am getting output NA, and how can I fix the code?
+The output **NA** does not make sense and is not the same as my previous answer. I gave Gemini AI the following prompt next:
 
-The response explained this may be due to missing values stored in the vector storms$hurricane_force_diameter. They suggested I include the argument na.rm = TRUE to account for the missing values. That worked!
+> My data frame is named storms and the variable of interest is ``hurricane_force_diameter``. The output of ``mean(storms$hurricane_force_diameter)`` is **NA** but that is not correct. Why do you think I am getting output **NA**, and how can I fix the code?
 
+The response explained this may be due to missing values stored in the vector ``storms$hurricane_force_diameter``. They suggested I include the argument ``na.rm = TRUE`` to account for the missing values. That worked!
+
+```
 mean(storms$hurricane_force_diameter, na.rm = TRUE)
+```
 
 [1] 14.9207
-This is better than my original answer since (1) it is more accurate and (2) there is only one value output instead of getting the five number summary as well. However, one positive thing about using the summary() function is that it handles missing values better than the mean() function.
 
-Note
-In documenting this process, there is learning going on, and you have a record of your thought process when you review these materials for the exam.
+This is better than my original answer since (1) it is more accurate and (2) there is only one value output instead of getting the five number summary as well. However, one positive thing about using the ``summary()`` function is that it handles missing values better than the ``mean()`` function.
 
-Tip
-You do not need to include all of the prompts and responses you obtained. Only include the prompts that were useful in obtaining your final answer and please summarize the exchange concisely.
+---
+**_Note:_** In documenting this process, there is learning going on, and you have a record of your thought process when you review these materials for the exam.
 
-Solution Entirely Using AI
+---
+
+---
+**_Tip_** You do not need to include all of the prompts and responses you obtained. Only include the prompts that were useful in obtaining your final answer and please summarize the exchange concisely.
+
+---
+
+# Solution Entirely Using AI
 I unfortunately was not able to solve this question on my own. To solve the problem, I looked at notes from class but could not find a similar example. Next I tried using AI. I typed the following prompt into ChatGPT:
 
-How can I find the mean of a numeric variable in R that has some missing values?
+> How can I find the mean of a numeric variable in R that has some missing values?
 
 ChatGPT suggested the code below:
 
+```
 my_values <- na.omit(df$var)
 mean(my_values)
+```
 
-I realize my data frame and variable are named storms and hurricane_force_diameter, so I modified the code as follows and added comments to the code to explain what the code is doing:
+I realize my data frame and variable are named ``storms`` and ``hurricane_force_diameter``, so I modified the code as follows and added comments to the code to explain what the code is doing:
 
+```
 my_values <- na.omit(storms$hurricane_force_diameter)  # remove missing values
 mean(my_values)  # compute mean of vector with no missing values
+```
 
 [1] 14.9207
-The mean hurricane force diameter is 
- nautical miles.
 
-Note
-Good for you and I to both know you were stuck and unable to solve at first without getting help for AI. You are not in trouble. I might suggest trying another similar example in a day or so to see if this workflow is helping you or if relying on AI is hindering you. If you are not able to do similar examples, then it is a good time to ask a human (me) for help.
+The mean hurricane force diameter is 14.9207 nautical miles.
 
-Solution Entirely Using AI
+---
+**_Note:_** Good for you and I to both know you were stuck and unable to solve at first without getting help for AI. You are not in trouble. I might suggest trying another similar example in a day or so to see if this workflow is helping you or if relying on AI is hindering you. If you are not able to do similar examples, then it is a good time to ask a human (me) for help.
+
+---
+
+# Solution Entirely Using AI
 I unfortunately was not able to solve this question on my own. To solve the problem, I looked at notes from class but could not find a similar example. Next I tried using AI. I typed the following prompt into ChatGPT:
 
-How can I find the mean of a numeric variable named hurricane_force_diameter that has some missing values in the data frame storms using R?
+> How can I find the mean of a numeric variable named ``hurricane_force_diameter`` that has some missing values in the data frame storms using R?
 
 ChatGPT suggested the code below:
 
+```
 my_mean <- function(x) {
   clean_data <- na.omit(x)  # remove missing values
   n <- length(clean_data)  # compute number of elements in x
@@ -134,5 +153,13 @@ my_mean <- function(x) {
 }
 
 my_mean(storms$hurricane_force_diameter)
+```
 
 [1] 14.9207
+
+The mean hurricane force diameter is 14.9207 nautical miles.
+
+---
+**_Note:_** This code is way more complicated than needed. This was intended to be a simple one line command answer. Using code such as this on an exam is time consuming and inefficient; thus, you would not earn full credit for this work on homework or the exam since it is not an elegant way to compute a mean.
+
+---
